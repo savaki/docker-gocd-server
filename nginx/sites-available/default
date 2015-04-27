@@ -1,0 +1,28 @@
+# HTTPS server
+proxy_read_timeout     1200;
+proxy_connect_timeout  240;
+client_max_body_size   0;
+server {
+  listen 443;
+	server_name _;
+
+  ssl on;
+
+  ssl_session_timeout 5m;
+  ssl_certificate /etc/nginx/ssl/nginx.crt;
+  ssl_certificate_key /etc/nginx/ssl/nginx.key;
+
+  ssl_protocols TLSv1;
+  ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
+  ssl_prefer_server_ciphers on;
+
+
+  location / {
+    proxy_pass             https://127.0.0.1:8154;
+    proxy_http_version     1.1;
+    proxy_set_header       X-Forwarded-For $remote_addr;
+    proxy_read_timeout     1200;
+    proxy_connect_timeout  240;
+    client_max_body_size   0;
+  }
+}

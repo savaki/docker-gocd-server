@@ -1,0 +1,8 @@
+Host github.com
+	User git
+	StrictHostKeyChecking no
+
+Host bitbucket.org
+	User git
+	StrictHostKeyChecking no
+
