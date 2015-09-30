@@ -3,8 +3,8 @@ MAINTAINER Matt Ho
 
 #--[ DO NOT MODIFY BELOW THIS POINT ]------------------------------------
 
-ENV GOCD_VERSION 14.4.0
-ENV GOCD_BUILD   1356
+ENV GOCD_VERSION 15.2.0
+ENV GOCD_BUILD   2248
 ENV GOCD_DEB     go-server-${GOCD_VERSION}-${GOCD_BUILD}.deb
 
 # install oracle jdk 7
